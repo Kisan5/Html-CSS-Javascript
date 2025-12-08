@@ -7,26 +7,37 @@ body{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(90deg,rgba(58, 194, 224, 1) 0%,rgba(54, 201, 108, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Note : 
-    1. Only Horizontal-for centering div horizontally only used margin: auto below
-    2. Both horizontal and vertical - Used parent postion relative and child absolute with adjustments(top,left,transform) to vertically center div but height should be assigned of parent 
-*/
+
 .container{
     width: 40%;
     border: 1.5px solid black;
     border-radius: 10px;
+    /* Note : 
+    1. Only Horizontal-for centering div horizontally only used margin: auto below
+    2. Both horizontal and vertical - Used parent postion relative and child absolute with adjustments(top,left,transform) to vertically center div but height should be assigned of parent 
+    */
+    /* used flex in body parent elememnts so deleted this old school centering */
     /* margin: auto; */
-    position: relative;
+    /* position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     padding: 20px;
     
-    /* use of grid to align item inside container to make center horizontal and vertically */
-    display: grid;
-    place-items: center;
+    /* centering elements */
+    /*1.  use of grid to align item inside container to make center horizontal and vertically */
+    /* display: grid;
+    place-items: center; */
+
+    /* 2. used flex to center inside content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* text-align keeps the elements horizontally center in div */
@@ -53,8 +64,13 @@ body{
 }
 
 .inputs{
-    display: grid;
-    place-items: center;
+    /* used flex so commented it */
+    /* display: grid;
+    place-items: center; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input{
